@@ -6,6 +6,6 @@ class ApplicationController < ActionController::Base
   private
 
   def set_default_format
-    request.format = :json if params[:format].nil?
+    request.format = :html if params[:format].nil?
   end
 end
