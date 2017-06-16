@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170616003119) do
+ActiveRecord::Schema.define(version: 20170616034318) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,13 @@ ActiveRecord::Schema.define(version: 20170616003119) do
     t.datetime "updated_at", null: false
     t.index ["ip_address"], name: "index_request_ips_on_ip_address"
     t.index ["started_at"], name: "index_request_ips_on_started_at"
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.string "subject"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
