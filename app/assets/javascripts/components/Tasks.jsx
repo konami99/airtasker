@@ -10,7 +10,9 @@ class Tasks extends React.Component {
   }
 
   click() {
-    fetch("/rate_limited.json").then((response) => {
+    fetch("/tasks.json", {
+      method: "post"
+    }).then((response) => {
       response.json().then((data) => {
         this.setState({response: data.response})
       })

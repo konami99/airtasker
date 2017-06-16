@@ -4,7 +4,7 @@ module RateLimiting
   REQUEST_LIMIT = 100
 
   included do
-    before_action :block_request, if: :too_many_requests?
+    before_action :block_request, if: :too_many_requests?, only: [:create]
 
     private
 
