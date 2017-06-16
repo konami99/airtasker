@@ -3,8 +3,6 @@ class ApplicationController < ActionController::Base
 
   before_action :set_default_format
 
-  include RateLimiting
-
   private
 
   def set_default_format
