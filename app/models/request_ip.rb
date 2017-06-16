@@ -1,6 +1,8 @@
 class RequestIp < ApplicationRecord
   validates :ip_address, :count, :started_at, presence: true
 
+  scope :current_hour, -> { where(started_at: Time.current.beginning_of_hour) }
+
   class << self
     def to_integer(string)
       IPAddr.new(string).to_i
