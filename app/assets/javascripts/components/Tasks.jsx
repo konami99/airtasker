@@ -11,7 +11,10 @@ class Tasks extends React.Component {
 
   click() {
     fetch("/tasks.json", {
-      method: "post"
+      method: "post",
+      headers: {
+        "Content-Type": "application/json"
+      }
     }).then((response) => {
       response.json().then((data) => {
         this.setState({response: data.response})
@@ -25,11 +28,11 @@ class Tasks extends React.Component {
         <tbody>
           <tr>
             <td className="header">Subject:</td>
-            <td><input type="text" className="subject" /></td>
+            <td><input name="subject" type="text" className="subject" /></td>
           </tr>
           <tr>
             <td className="header">Content:</td>
-            <td><textarea className="content" rows="10"></textarea></td>
+            <td><textarea name="content" className="content" rows="10"></textarea></td>
           </tr>
           <tr>
             <td></td>
