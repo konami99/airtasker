@@ -32,3 +32,13 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
+
+group :test do
+  gem 'database_cleaner'
+  gem 'faker'
+  gem 'poltergeist'
+  gem 'simplecov', require: false
+  gem 'shoulda'
+  gem 'vcr'
+  gem 'webmock'
+end
