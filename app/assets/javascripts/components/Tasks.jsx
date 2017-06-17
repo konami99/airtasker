@@ -45,11 +45,11 @@ class Tasks extends React.Component {
           <form className="form-group" id="task-form" onSubmit={ this.submit }>
             <div className="form-group">
               <label for="subject">Subject</label>
-              <input type="text" id="subject" className="form-control" name="subject" />
+              <input type="text" id="subject" className="form-control" name="task[subject]" />
             </div>
             <div className="form-group">
               <label for="content">Content</label>
-              <textarea id="content" className="form-control" name="content" rows="3"></textarea>
+              <textarea id="content" className="form-control" name="task[content]" rows="3"></textarea>
             </div>
 
             <button type="submit" className="btn btn-primary">Submit</button>
