@@ -7,14 +7,19 @@ class Tasks extends React.Component {
     }
 
     this.submit = this.submit.bind(this)
+    this.isResponseOk = this.isResponseOk.bind(this)
   }
 
   classes() {
     return classNames({
       "alert": true,
-      "alert-success": this.state.response === "ok",
-      "alert-warning": this.state.response !== "ok" && this.state.response !== null
+      "alert-success": this.isResponseOk(),
+      "alert-warning": !this.isResponseOk()
     })
+  }
+
+  isResponseOk() {
+    return this.state.response !== null && this.state.response === "ok"
   }
 
   submit(event) {
