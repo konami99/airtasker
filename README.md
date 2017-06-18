@@ -2,7 +2,7 @@
 
 This app is a simple interface for creating tasks. Task creation is limited at 100 times per IP address/hour (you can lower `REQUEST_LIMIT` to test response `429`). Rate-limiting is provided by a module called `RateLimiting`. `RateLimiting` can be used on any controllers because it checks the combination of controller/action and IP address. If a request is within limit, response will be "ok". Otherwise response will be "Rate limit exceeded. Try again in #{n} seconds".
 
-![request is within limit](http://imgur.com/a/ELCYU)
+[Imgur](http://i.imgur.com/Y2iXApD.png)
 ![request is out of limit](https://drive.google.com/file/d/0B1u6iewIhHo5Nnp0UEh6VkZIeDA/view?usp=sharing)
 
 How to run the app:
