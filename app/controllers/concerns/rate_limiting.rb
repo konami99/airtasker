@@ -12,6 +12,7 @@ module RateLimiting
       request_ip = RequestIp.
         current_hour.
         find_by \
+        source: source,
         ip_address: RequestIp.to_integer(request.remote_ip)
 
       if request_ip
@@ -23,11 +24,16 @@ module RateLimiting
         end
       else
         RequestIp.create \
+          source: source,
           ip_address: request.remote_ip,
           started_at: Time.current.beginning_of_hour,
           count: 1
         false
       end
+    end
+
+    def source
+      "#{params[:controller]}##{params[:action]}"
     end
 
     def block_request

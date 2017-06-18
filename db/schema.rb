@@ -16,12 +16,14 @@ ActiveRecord::Schema.define(version: 20170616034318) do
   enable_extension "plpgsql"
 
   create_table "request_ips", force: :cascade do |t|
+    t.string "source"
     t.bigint "ip_address"
     t.datetime "started_at"
     t.integer "count"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["ip_address"], name: "index_request_ips_on_ip_address"
+    t.index ["source"], name: "index_request_ips_on_source"
     t.index ["started_at"], name: "index_request_ips_on_started_at"
   end
 
