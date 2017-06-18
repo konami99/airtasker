@@ -1,12 +1,16 @@
 # README
 
-This app is a simple interface for creating tasks. Task creation is limited at 100 times per IP address/hour. Rate-limiting is provided by a module called RateLimiting. RateLimiting can be used on any controllers because it checks the combination of controller/action and IP address. If a request is within limit, response will be "ok". Otherwise response will be "Rate limit exceeded. Try again in #{n} seconds".
+This app is a simple interface for creating tasks. Task creation is limited at 100 times per IP address/hour. Rate-limiting is provided by a module called `RateLimiting`. `RateLimiting` can be used on any controllers because it checks the combination of controller/action and IP address. If a request is within limit, response will be "ok". Otherwise response will be "Rate limit exceeded. Try again in #{n} seconds".
+
+!(https://drive.google.com/open?id=0B1u6iewIhHo5UWFmNHR1OXVoTWM)
+!(https://drive.google.com/open?id=0B1u6iewIhHo5Nnp0UEh6VkZIeDA)
 
 How to run the app:
 1. Create a database called "airtasker_development" in your local postgres.
 2. `bundle install`
 2. `rails db:migrate RAILS_ENV=development`
 3. `rails s`
+4. `http://localhost:3000/`
 
 How to run test:
 1. rspec spec
