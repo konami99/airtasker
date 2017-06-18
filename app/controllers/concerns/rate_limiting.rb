@@ -4,7 +4,7 @@ module RateLimiting
   REQUEST_LIMIT = 100
 
   included do
-    before_action :block_request, if: :too_many_requests?, only: [:create]
+    before_action :block_request
 
     private
 
@@ -31,7 +31,9 @@ module RateLimiting
     end
 
     def block_request
-      render status: 429, json: { response: "Rate limit exceeded. Try again in #{(Time.current.end_of_hour - Time.current).round} seconds" }
+      if too_many_requests?
+        render status: 429, json: { response: "Rate limit exceeded. Try again in #{(Time.current.end_of_hour - Time.current).round} seconds" }
+      end
     end
   end
 end
