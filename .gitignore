@@ -20,6 +20,6 @@
 /node_modules
 /yarn-error.log
 /test
-/config
+/config/database.yml
 
 .byebug_history

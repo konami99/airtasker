@@ -4,7 +4,7 @@ module RateLimiting
   REQUEST_LIMIT = 100
 
   included do
-    before_action :block_request, if: :too_many_requests?, only: [:create]
+    before_action :block_request
 
     private
 
@@ -12,6 +12,7 @@ module RateLimiting
       request_ip = RequestIp.
         current_hour.
         find_by \
+        source: source,
         ip_address: RequestIp.to_integer(request.remote_ip)
 
       if request_ip
@@ -23,6 +24,7 @@ module RateLimiting
         end
       else
         RequestIp.create \
+          source: source,
           ip_address: request.remote_ip,
           started_at: Time.current.beginning_of_hour,
           count: 1
@@ -30,8 +32,14 @@ module RateLimiting
       end
     end
 
+    def source
+      "#{params[:controller]}##{params[:action]}"
+    end
+
     def block_request
-      render status: 429, json: { response: "Rate limit exceeded. Try again in #{(Time.current.end_of_hour - Time.current).round} seconds" }
+      if too_many_requests?
+        render status: 429, json: { response: "Rate limit exceeded. Try again in #{(Time.current.end_of_hour - Time.current).round} seconds" }
+      end
     end
   end
 end

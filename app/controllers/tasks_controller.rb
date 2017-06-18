@@ -1,4 +1,6 @@
 class TasksController < ApplicationController
+  skip_before_action :block_request, except: :create
+
   def index
   end
 
