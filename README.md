@@ -1,3 +1,6 @@
+# UPDATE
+20/06/2017: I've put up this app to my personal account on AWS. (http://airtasker2-env.us-west-2.elasticbeanstalk.com/) Elasticbeanstalk is connecting to RDS (Postgres) in the backend. Next I'll integrate with Codeship to achieve Continious Delivery/Continuous Integration.
+
 # README
 
 This app is a simple interface for creating tasks. Task creation is limited at 100 times per IP address/hour (you can lower `REQUEST_LIMIT` to test response `429`). Rate-limiting is provided by a module called `RateLimiting`. `RateLimiting` can be used on any controllers because it checks the combination of controller/action and IP address. If a request is within limit, response will be "ok". Otherwise response will be "Rate limit exceeded. Try again in #{n} seconds".
