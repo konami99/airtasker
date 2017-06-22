@@ -48,7 +48,7 @@ class Tasks extends React.Component {
         <div className="col-0 col-md-3"></div>
         <div className="col-12 col-md-6">
           <div class="page-header">
-            <h1>Create a new task</h1>
+            <h1>Create a brand new task</h1>
           </div>
           <form className="form-group" id="task-form" onSubmit={ this.submit }>
             <div className="form-group">
