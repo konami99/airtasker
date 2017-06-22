@@ -1,5 +1,7 @@
 # UPDATE
-20/06/2017: I've put up this app to my personal account on AWS. (http://airtasker2-env.us-west-2.elasticbeanstalk.com/) Elasticbeanstalk is connecting to RDS (Postgres) in the backend. Next I'll integrate it with Codeship to achieve Continious Delivery/Continuous Integration.
+22/06/2017: Integrated with Codeship. So any commits to `master` will trigger tests. When tests pass, code will be packaged and pushed up to Elasticbeanstalk.
+
+20/06/2017: I've put up this app to my personal account on AWS. (http://airtasker2-env.us-west-2.elasticbeanstalk.com/) Elasticbeanstalk is connecting to RDS (Postgres) in the backend.
 
 # README
 
