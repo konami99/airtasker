@@ -14,10 +14,10 @@ class RequestIp < ApplicationRecord
   end
 
   def ip_address
-    IPAddr.new(self[:ip_address], Socket::AF_INET).to_s
+    self.class.to_string(self[:ip_address])
   end
 
   def ip_address=(string)
-    write_attribute :ip_address, IPAddr.new(string).to_i
+    write_attribute :ip_address, self.class.to_integer(string)
   end
 end

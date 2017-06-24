@@ -27,7 +27,7 @@ class Tasks extends React.Component {
     this.setState({response: null})
     fetch("/tasks.json", {
       method: "post",
-      body: new FormData(document.getElementById("task-form"))
+      body: new FormData(event.currentTarget)
     }).then((response) => {
       response.json().then((data) => {
         this.setState({response: data.response})
@@ -48,7 +48,7 @@ class Tasks extends React.Component {
         <div className="col-0 col-md-3"></div>
         <div className="col-12 col-md-6">
           <div class="page-header">
-            <h1>Create a brand new task</h1>
+            <h1>Create a task</h1>
           </div>
           <form className="form-group" id="task-form" onSubmit={ this.submit }>
             <div className="form-group">
