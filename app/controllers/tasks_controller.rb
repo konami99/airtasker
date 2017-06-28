@@ -5,7 +5,8 @@ class TasksController < ApplicationController
   end
 
   def create
-    Task.create task_params
+    t = Task.create task_params
+    TestJob.set(wait: 15.seconds).perform_later
   end
 
   private
