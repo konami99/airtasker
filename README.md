@@ -5,7 +5,7 @@ https://richardchou.id.au/
 ![](http://i.imgur.com/TeORU6g.png)
 
 # UPDATE
-05/07/2017
+05/07/2017: `force_ssl` on production
 
 26/06/2017: Integrated with CloudFront. Assets are now serving from CDN.
 
