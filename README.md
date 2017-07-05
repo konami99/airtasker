@@ -2,7 +2,7 @@ This is a simple application showing how to integrate Codeship and Elasticbeanst
 
 https://richardchou.id.au/
 
-![request is within limit](http://imgur.com/a/4ZBwM)
+![](http://i.imgur.com/TeORU6g.png)
 
 # UPDATE
 05/07/2017
@@ -15,8 +15,8 @@ https://richardchou.id.au/
 
 This app is a simple interface for creating tasks. Task creation is limited at 100 times per IP address/hour (you can lower `REQUEST_LIMIT` to test response `429`). Rate-limiting is provided by a module called `RateLimiting`. `RateLimiting` can be used on any controllers because it checks the combination of controller/action and IP address. If a request is within limit, response will be "ok". Otherwise response will be "Rate limit exceeded. Try again in #{n} seconds".
 
-![request is within limit](http://i.imgur.com/Y2iXApD.png)
-![request is out of limit](http://i.imgur.com/RVxZIHe.png)
+![](http://i.imgur.com/Y2iXApD.png)
+![](http://i.imgur.com/RVxZIHe.png)
 
 How to run the app:
 1. Create a database called "airtasker_development" in your local postgres.
