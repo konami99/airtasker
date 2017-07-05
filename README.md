@@ -1,9 +1,15 @@
+This is a simple application showing how to integrate Codeship and Elasticbeanstalk. There're two groups of instances: `webservers` process http requests, while `workers` process background jobs. Frontend is react and bootstrap.
+
+https://richardchou.id.au/
+
+![request is within limit](http://imgur.com/a/4ZBwM)
+
 # UPDATE
+05/07/2017
+
 26/06/2017: Integrated with CloudFront. Assets are now serving from CDN.
 
 22/06/2017: Integrated with Codeship. So any commits to `master` will trigger tests. When tests pass, code will be packaged and pushed up to Elasticbeanstalk.
-
-20/06/2017: I've put up this app to my personal account on AWS. (http://airtasker.us-west-2.elasticbeanstalk.com) Elasticbeanstalk is connecting to RDS (Postgres) in the backend.
 
 # README
 
