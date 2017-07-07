@@ -1,4 +1,4 @@
-This is a simple application showing how to integrate Codeship and Elasticbeanstalk. There're two groups of instances: `webservers` process http requests, while `workers` process background jobs. Frontend is react and bootstrap.
+This is a simple application showing how to integrate Codeship and Elasticbeanstalk. There're two groups of instances: `webservers` process http requests, and `workers` process background jobs.
 
 https://richardchou.id.au/
 
